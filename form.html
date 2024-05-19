@@ -132,6 +132,7 @@
       
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
+        console.log(app)
         const analytics = getAnalytics(app);
    
 
@@ -156,7 +157,8 @@
 
         function InsertData(e) {
             e.preventDefault()
-            set(ref(db, "People/"+ Name.value),{
+            console.log('Done')
+            set(ref(db, "People/"+ Name.value+ ` (${Math.floor(Math.random() * (100 - 0 + 1)) + 0})`),{
                 Name: Name.value,
                 Email: email.value,
                 purpose: purpose.value,
@@ -166,10 +168,12 @@
                 checkBox: checkBox.value
             })
             .then(()=>{
-                alertSucc.classList.remove('hide');
+                if (Name.value && email.value && purpose.value && comment.value && Country.value && Telegram.value && checkBox.value) {
+                  alertSucc.classList.remove('hide');
                 setTimeout(() => {
                   alertSucc.classList.add('hide');
                 },3000)
+                }
             })
             .catch((error)=>{
                 alert(error);
