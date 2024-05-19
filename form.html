@@ -154,7 +154,8 @@
         var alertSucc = document.querySelector(".alert");
 
 
-        function InsertData() {
+        function InsertData(e) {
+            e.preventDefault()
             set(ref(db, "People/"+ Name.value),{
                 Name: Name.value,
                 Email: email.value,
