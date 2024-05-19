@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabanion</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./css/form.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary text-dark-50 shadow">
+        <div class="container">
+          <a class="navbar-brand text-white" href="#">Arabanion</a>
+          <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+              <li class="nav-item  p-lg-2">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item  p-lg-2">
+                <a class="nav-link" href="#">How it works</a>
+              </li>
+              <li class="nav-item  p-lg-2">
+                <a class="nav-link" href="#">FAQ</a>
+              </li>
+              <li class="nav-item  p-lg-2">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item  p-lg-2">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+            <div class="button me-lg-2">
+              <button onclick="window.location.href='index.html'" class="btn btn-outline-light w-100 d-block justify-content-center btn-md gap-2 me-2 d-lg-flex align-items-center">
+                <i class="fa-solid fa-arrow-left"></i>
+                Go Back
+              </button>
+            </div>
+            <!-- <div class="nav-item dropdown d-flex justify-content-center  align-items-center mt-lg-0 mt-2 rounded" style="background: #d4d4d400;">
+              <a class="nav-link w-100 text-white text-center  dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Language
+              </a>
+              <ul class="dropdown-menu w-100">
+                <li><a class="dropdown-item" href="#">English</a></li>
+                <li><a class="dropdown-item" href="#">Arabic</a></li>
+              </ul>
+            </div> -->
+          </div>
+        </div>
+      </nav>
+
+      <div class="container land d-flex justify-content-center">
+        <div class="col-11 col-md-6 formm">
+          <div class="alert hide alert-info" role="alert">
+            You information Was Submitted successfully..!
+          </div>
+          <form class="row g-3">
+            <div class="col-12 d-flex justify-content-center">
+              <div class="display-6">
+                Arabanion Form
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input required type="email" class="form-control" id="inputEmail4" placeholder="example@example.com">
+            </div>
+            <div class="col-md-6">
+              <label for="inputName4" class="form-label">Name</label>
+              <input required type="text" class="form-control" id="inputName4">
+            </div>
+            <div class="col-12">
+              <label for="inputPurpose" class="form-label">Why did you join this course ?</label>
+              <input required type="text" class="form-control" id="inputPurpose" placeholder="Because i love arabic :D..... ">
+            </div>
+            <div class="col-12">
+              <label for="inputComment2" class="form-label">What do you expect from this course ?</label>
+              <input required type="text" class="form-control" id="inputComment2" placeholder="to be fluent in egyption arabic...">
+            </div>
+            <div class="col-md-6">
+              <label for="inputCountry" class="form-label">Country</label>
+              <input  required type="text" class="form-control" id="inputCountry" placeholder="ex: USA">
+            </div>
+            <div class="col-md-6">
+              <label for="inputTelegram" class="form-label">Telegram username</label>
+              <div class="input-group">
+                <div class="input-group-text" id="btnGroupAddon">@</div>
+                <input required type="text" id="inputTelegram" class="form-control" placeholder="ArabicLover" aria-label="Input group example" aria-describedby="btnGroupAddon">
+              </div>
+            </div>
+            <div class="col-md-12">
+            
+              <div class="form-check form-switch">
+                <input required class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">I will tell my friends about this course.</label>
+                *
+              </div>
+            </div>
+            <div class="col-12 py-2">
+              <button type="submit" id="insert" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyCS7GrTju5S8A9MkuXjPfF5C2PxJRWWNEo",
+          authDomain: "arabanion-aa395.firebaseapp.com",
+          databaseURL: "https://arabanion-aa395-default-rtdb.europe-west1.firebasedatabase.app",
+          projectId: "arabanion-aa395",
+          storageBucket: "arabanion-aa395.appspot.com",
+          messagingSenderId: "698647489708",
+          appId: "1:698647489708:web:187b807cdd3bdcf3bfc309",
+          measurementId: "G-SVVSR86TW6"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+   
+
+        import {getDatabase, ref, get, set, child, update, remove}
+        from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js"//Copy and Paste the URL from near the top of the CDN you pasted in from firebase
+        // (the one where you imported "initializeApp" from),
+        //but change "firebase-app" to "firebase-database"
+        
+
+        const db = getDatabase();
+
+        var email = document.querySelector("#inputEmail4");
+        var Name = document.querySelector("#inputName4");
+        var purpose = document.querySelector("#inputPurpose");
+        var comment = document.querySelector("#inputComment2");
+        var Country = document.querySelector("#inputCountry");
+        var Telegram = document.querySelector("#inputTelegram");
+        var checkBox = document.querySelector("#flexSwitchCheckDefault");
+        var insertBtn = document.querySelector("#insert");
+        var alertSucc = document.querySelector(".alert");
+
+
+        function InsertData() {
+            set(ref(db, "People/"+ Name.value),{
+                Name: Name.value,
+                Email: email.value,
+                purpose: purpose.value,
+                comment: comment.value,
+                Country: Country.value,
+                Telegram: Telegram.value,
+                checkBox: checkBox.value
+            })
+            .then(()=>{
+                alertSucc.classList.remove('hide');
+                setTimeout(() => {
+                  alertSucc.classList.add('hide');
+                },3000)
+            })
+            .catch((error)=>{
+                alert(error);
+            });
+        }
+
+        insertBtn.addEventListener('click', InsertData);
+
+
+      </script>
+      <script src="./js/bootstrap.bundle.min.js"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+</body>
+</html>

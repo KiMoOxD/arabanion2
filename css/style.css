@@ -1,0 +1,64 @@
+body {
+    background: url(../imgs/graph-pattern.gif), radial-gradient(58.79% 82.68% at 19.65% 7.75%,#272727 0,#171717 100%);
+    background-blend-mode: multiply,normal;
+    min-height: 100vh;
+    min-width: 100%;
+    color: #eee;
+    font-family: Barlow,sans-serif;
+    font-size: 15px;
+    line-height: 23px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #939393;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #0d6dfda1;
+}
+
+section {
+    overflow-x: hidden;
+}
+
+
+.dropdown-menu {
+    background: transparent;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    color: rgba(255, 255, 255, 0.313);
+    background: transparent;
+}
+
+.nav-link {
+    color: white;
+}
+
+.land {
+    min-height: calc(100vh - 71px);
+}
+
+
+.container-lg {
+    min-height: 100vh;
+}
+
+
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+
